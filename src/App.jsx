@@ -1,18 +1,17 @@
 import "./app.scss";
 import Navbar from "./components/navbar/Navbar";
-import Test from './Test';
+
 
 const App = () => {
   return <div>
-    {/* <section>
+    <section>
       <Navbar />
     </section>
     <section>Parallax</section>
     <section>Services</section>
     <section>Parallax</section>
     <section>Portfolio</section>
-    <section>Contact</section> */}
-    <Test />
+    <section>Contact</section>
   </div>;
 };
 

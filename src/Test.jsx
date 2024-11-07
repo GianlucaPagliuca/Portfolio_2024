@@ -1,22 +1,30 @@
 import {motion} from 'framer-motion';
+import {useState} from "react";
 
-const variants = {
-    visible: {opacity:1},
-    hidden: {opacity:0},
-};
+
 
 const Test = () => {
+    const [open, setOpen] = useState(false);
+
+    const variants = {
+        visible: {
+            opacity: 1,
+            x: 100,
+            transition:{ staggerChildren: 0.2 },
+        },
+        hidden: { opacity: 0 },
+    };
+
+    const items = [
+        "item1", "item2", "item3", "item4"
+    ];
   return (
     <div className="course">
-        <motion.div 
-            className="box" 
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{duration: 2}}
-        >
-
-        </motion.div>
+        <motion.ul initial="hidden" animate="visible" variants={variants}>
+            {items.map((item, i) => (
+                <motion.li key={i} variants={variants}>{item}</motion.li>
+            ))}
+        </motion.ul>
     </div>
   )
 }
